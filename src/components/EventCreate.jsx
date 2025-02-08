@@ -37,7 +37,7 @@ console.log(token);
             return;
         }
 
-        const response = await fetch("http://localhost:8000/api/v1/events/createevent", {
+        const response = await fetch("http://localhost:8001/api/v1/events/createevent", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

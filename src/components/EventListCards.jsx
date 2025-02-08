@@ -5,7 +5,7 @@ const EventListCards = () => {
   
   useEffect(() => {
     // Fetch data from the actual API
-    fetch('http://localhost:8000/api/v1/events/getalllist')
+    fetch('http://localhost:8001/api/v1/events/getalllist')
       .then((response) => response.json())
       .then((data) => {
         if (data?.data) {

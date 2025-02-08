@@ -24,7 +24,7 @@ const EventTable = () => {
     if (userId) {
       const fetchEvents = async () => {
         try {
-          const response = await axios.get(`http://localhost:8000/api/v1/events/getlist/${userId}`);
+          const response = await axios.get(`http://localhost:8001/api/v1/events/getlist/${userId}`);
           if (response.data && response.data.data) {
             setEvents(response.data.data); // Set the fetched events in the state
           }
@@ -56,7 +56,7 @@ const EventTable = () => {
     const token = localStorage.getItem('accessToken');
 
     const response = await axios.put(
-      `http://localhost:8000/api/v1/events/update/${updatedEvent._id}`,
+      `http://localhost:8001/api/v1/events/update/${updatedEvent._id}`,
       updatedEvent,
       {
         headers: {
@@ -93,7 +93,7 @@ const handleDelete = async (id) => {
       return;
     }
 
-    const response = await fetch(`http://localhost:8000/api/v1/events/delete/${id}`, {
+    const response = await fetch(`http://localhost:8001/api/v1/events/delete/${id}`, {
       method: 'DELETE',
       headers: {
         'Authorization': `Bearer ${token}`,

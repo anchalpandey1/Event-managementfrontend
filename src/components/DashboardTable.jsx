@@ -16,7 +16,7 @@ const DashboardTable = () => {
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        const response = await axios.get("http://localhost:8000/api/v1/events/getalllist");
+        const response = await axios.get("http://localhost:8001/api/v1/events/getalllist");
         console.log("API Response:", response); // Debugging API response
         // Now accessing the events from response.data.data since it is nested
         if (response.data && Array.isArray(response.data.data)) {
